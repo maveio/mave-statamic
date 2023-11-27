@@ -22,6 +22,15 @@ MAVE_KEY=xxxxx
 MAVE_SUB=xxxxx
 ```
 
+Add the following to your Antlers template:
+
+```html
+<script type="module">
+  import { Player } from "//cdn.video-dns.com/npm/@maveio/components/+esm";
+</script>
+<mave-player embed="{{ mave_field }}"></mave-player>
+```
+
 ## Development
 
 vite build --watch
