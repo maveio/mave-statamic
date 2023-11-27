@@ -24,7 +24,7 @@ MAVE_SUB=xxxxx
 
 Add the following to your Antlers template:
 
-```html
+``` html
 <script type="module">
   import { Player } from "//cdn.video-dns.com/npm/@maveio/components/+esm";
 </script>
@@ -33,6 +33,10 @@ Add the following to your Antlers template:
 
 ## Development
 
+``` bash
 vite build --watch
+```
 
+``` bash
 composer require maveio/statamic-mave
+```
