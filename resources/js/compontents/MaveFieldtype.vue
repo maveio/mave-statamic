@@ -53,9 +53,11 @@ export default {
 
     mounted() {
         document.addEventListener('mave:select', (e) => {
-            const img = e.detail.querySelector('mave-img')
-            this.update(img.getAttribute('embed'))
-            this.searchModalIsOpen = false
+            if (this.searchModalIsOpen) {
+                const img = e.detail.querySelector('mave-img')
+                this.update(img.getAttribute('embed'))
+                this.searchModalIsOpen = false
+            }
         })
     },
 
@@ -73,54 +75,11 @@ export default {
     },
 
     computed: {
-        icons() {
-            if (!this.result) return []
-
-            return this.result.icons.map(icon => {
-                return {
-                    name: icon,
-                    collection: this.result.collections[icon.split(':')[0]],
-                }
-            })
-        }
     },
 
     methods: {
         openSearchModal() {
             this.searchModalIsOpen = true
-        },
-        search() {
-            this.loading = true
-            ky.get('https://api.mave.design/search?limit=999&query=' + this.query)
-                .json()
-                .then(data => {
-                    this.result = data
-                })
-                .finally(() => {
-                    this.loading = false
-                })
-        },
-        getIconBuildData(icon) {
-            const iconBuildData = buildIcon(getIcon(icon.name))
-
-            const iconData = {
-                name: icon.name,
-            }
-
-            Object.keys(iconBuildData).forEach(key => {
-                iconData[key] = iconBuildData[key]
-            })
-
-            return iconData
-        },
-        select(icon) {
-            if (this.config.store_as === 'name') {
-                this.update(icon.name)
-            } else if (this.config.store_as === 'svg_data') {
-                this.update(this.getIconBuildData(icon))
-            }
-
-            this.searchModalIsOpen = false
         },
         modalOpened() {
             this.$refs.query.$el.querySelector('input').focus()
