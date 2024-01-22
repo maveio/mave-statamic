@@ -2,7 +2,7 @@
     <div>
         <div v-if="value" class="mave-relative">
             <mave-player :embed="value"
-                class="mave-w-full mave-aspect-video mave-rounded-md mave-overflow-hidden" :style="{ 'background-image': 'url(//space-' + value.substr(0, 5) + '.video-dns.com/' + value.substr(5, 14) + '/poster.jpg' }"></mave-player>
+                class="mave-w-full mave-aspect-video mave-rounded-md mave-overflow-hidden" :theme="theme" :style="{ 'background-image': 'url(//space-' + value.substr(0, 5) + '.video-dns.com/' + value.substr(5, 14) + '/poster.jpg' }"></mave-player>
             <div
                 class="mave-absolute mave-top-0 mave-left-0 mave-rounded-md mave-w-full mave-aspect-video mave-ring-1 mave-ring-inset mave-ring-black mave-ring-opacity-10 mave-pointer-events-none">
             </div>
@@ -70,7 +70,8 @@ export default {
             query: '',
             result: null,
             loading: false,
-            token: this.meta.maveApi
+            token: this.meta.maveApi,
+            theme: this.meta.maveTheme
         };
     },
 

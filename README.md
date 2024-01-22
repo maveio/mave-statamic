@@ -12,19 +12,21 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 Run the following command from your project root:
 
-``` bash
+```bash
 composer require maveio/statamic-mave
 ```
 
 In order for the field to work, you must add a mave.io API key and collection ID to your .env file like this:
-``` bash
+
+```bash
 MAVE_KEY=xxxxx
 MAVE_SUB=xxxxx
+MAVE_THEME=xxxxx
 ```
 
 Add the following to your Antlers template:
 
-``` html
+```html
 <script type="module">
   import { Player } from "//cdn.video-dns.com/npm/@maveio/components/+esm";
 </script>
@@ -33,10 +35,10 @@ Add the following to your Antlers template:
 
 ## Development
 
-``` bash
+```bash
 vite build --watch
 ```
 
-``` bash
+```bash
 composer require maveio/statamic-mave
 ```

@@ -20,6 +20,7 @@ class MaveFieldtype extends Fieldtype
 
         return [
             'maveApi' => $jwt,
+            'maveTheme' => env("MAVE_THEME"),
         ];
     }
 
