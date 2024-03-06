@@ -25,7 +25,7 @@
                     <button type="button" class="btn-close" @click="searchModalIsOpen = false">×</button>
                 </header>
 
-                <div class="mave-px-6 mave-py-3 mave-flex-1 mave-flex mave-flex-col mave-overflow-hidden">
+                <div class="mave-px-6 mave-py-3 mave-flex-1 mave-flex mave-flex-col mave-overflow-y-scroll">
                     <mave-list class="mave-grid mave-w-full mave-grid-cols-5 mave-gap-3" v-bind:token="token">
                         <div name="mave-list-root" class="relative mave-aspect-video mave-relative mave-rounded-lg mave-border mave-border-stone-100">
                             <div class="mave-w-full mave-h-full mave-flex mave-items-center mave-justify-center mave-text-3xl mave-font-bold mave-text-stone-400 mave-cursor-pointer" slot="root-link">
