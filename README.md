@@ -19,9 +19,10 @@ composer require maveio/statamic-mave
 In order for the field to work, you must add a mave.io API key and collection ID to your .env file like this:
 
 ```bash
-MAVE_KEY=xxxxx
-MAVE_SUB=xxxxx
-MAVE_THEME=xxxxx
+MAVE_KEY=
+MAVE_SUB=
+MAVE_THEME=
+MAVE_UPLOAD=false
 ```
 
 Add the following to your Antlers template:
