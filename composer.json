@@ -4,7 +4,7 @@
     "description": "A Statamic addon to use Mave videos in your Statamic site.",
     "license": "MIT",
     "require": {
-        "statamic/cms": "^4.0",
+        "statamic/cms": "^5.0",
         "firebase/php-jwt": "^6.9"
     },
     "require-dev": {
