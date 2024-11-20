@@ -8,20 +8,21 @@ use Firebase\JWT\JWT;
 
 class MaveFieldtype extends Fieldtype
 {
-    public function preload() 
+    public function preload()
     {
-        $key = env("MAVE_KEY"); // mave.io API key
-        $payload = array(
-            "sub" => env("MAVE_SUB"), // mave.io collection id
-            "exp" => time() + 3600, // Current epoch plus 3600 seconds
-        );
+        $key = config('mave.key'); // mave.io API key
+
+        $payload = [
+            'sub' => config('mave.sub'),    // mave.io collection id
+            'exp' => time() + 3600,         // Current epoch plus 3600 seconds
+        ];
 
         $jwt = JWT::encode($payload, $key, 'HS256');
 
         return [
-            'maveApi' => $jwt,
-            'maveTheme' => env("MAVE_THEME"),
-            'maveUpload' => env("MAVE_UPLOAD"),
+            'maveApi'    => $jwt,
+            'maveTheme'  => config('mave.theme'),
+            'maveUpload' => config('mave.upload'),
         ];
     }
 
